@@ -95,6 +95,25 @@
       text-shadow: 0 0 1px rgba(0, 0, 0, 0.05);
     }
 
+    .nonprofit-badge {
+      display: inline-block;
+      background-color: #f8f8f8;
+      border: 1px solid #e0e0e0;
+      border-radius: 20px;
+      padding: 6px 12px;
+      margin: 0 auto 15px;
+      font-size: 0.85rem;
+      font-family: 'Montserrat', sans-serif;
+      color: #555;
+      letter-spacing: 0.5px;
+    }
+
+    .nonprofit-badge::before {
+      content: "♢";
+      margin-right: 5px;
+      color: #777;
+    }
+
     .multilingual {
       text-align: center;
       padding: 10px 0;
@@ -291,6 +310,7 @@
   <div class="container">
     <header>
       <h1 class="title">Commons Currency Monetary System</h1>
+      <div class="nonprofit-badge">Non-Profit Initiative</div>
       <div class="multilingual" id="multilingual">
         <p class="active">A global monetary system for all nations</p>
         <p>Un sistema monetario global para todas las naciones (Spanish)</p>
