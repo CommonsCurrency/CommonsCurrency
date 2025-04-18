@@ -95,6 +95,32 @@
       text-shadow: 0 0 1px rgba(0, 0, 0, 0.05);
     }
 
+    .multilingual {
+      text-align: center;
+      padding: 10px 0;
+      overflow: hidden;
+      height: 35px;
+      margin: 0 auto 10px;
+      font-family: 'Montserrat', sans-serif;
+      position: relative;
+    }
+
+    .multilingual p {
+      margin: 0;
+      font-size: 1rem;
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s, transform 0.5s;
+    }
+
+    .multilingual p.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     .globe-section {
       margin: 0 auto 3rem;
       position: relative;
@@ -265,6 +291,19 @@
   <div class="container">
     <header>
       <h1 class="title">Commons Currency Monetary System</h1>
+      <div class="multilingual" id="multilingual">
+        <p class="active">A global monetary system for all nations</p>
+        <p>Un sistema monetario global para todas las naciones (Spanish)</p>
+        <p>适用于所有国家的全球货币体系 (Chinese)</p>
+        <p>نظام نقدي عالمي لجميع الدول (Arabic)</p>
+        <p>Глобальная валютная система для всех стран (Russian)</p>
+        <p>सभी देशों के लिए एक वैश्विक मौद्रिक प्रणाली (Hindi)</p>
+        <p>Un système monétaire mondial pour toutes les nations (French)</p>
+        <p>すべての国のためのグローバル通貨システム (Japanese)</p>
+        <p>Um sistema monetário global para todas as nações (Portuguese)</p>
+        <p>Sebuah sistem moneter global untuk semua negara (Indonesian)</p>
+        <p>Một hệ thống tiền tệ toàn cầu cho tất cả các quốc gia (Vietnamese)</p>
+      </div>
     </header>
 
     <!-- Globe visualization -->
@@ -346,6 +385,29 @@
           style="color: #000; text-decoration: none; border-bottom: 1px solid #ccc;">join@commonscurrency.org</a></p>
     </section>
   </div>
+
+  <!-- Language rotation script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const multilingualElement = document.getElementById('multilingual');
+      const phrases = multilingualElement.querySelectorAll('p');
+      let currentIndex = 0;
+
+      function rotateLanguages() {
+        // Remove active class from current phrase
+        phrases[currentIndex].classList.remove('active');
+
+        // Move to next phrase or back to first
+        currentIndex = (currentIndex + 1) % phrases.length;
+
+        // Add active class to new current phrase
+        phrases[currentIndex].classList.add('active');
+      }
+
+      // Start rotation after a delay
+      setInterval(rotateLanguages, 3000);
+    });
+  </script>
 </body>
 
 </html>
