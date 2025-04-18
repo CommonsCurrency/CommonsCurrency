@@ -4,32 +4,96 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Commons: A Foundation for a Just Global Economy</title>
+  <title>Commons Currency Monetary System | A Global Monetary Initiative</title>
 
-  <!-- Primary Meta Tags -->
-  <meta name="title" content="Commons: A Foundation for a Just Global Economy">
+  <!-- SEO Meta Tags -->
+  <meta name="title" content="Commons Currency Monetary System | A Global Monetary Initiative">
   <meta name="description"
-    content="A conceptual framework for a supranational world currency that is democratically administered and enables full fiscal autonomy for sovereign nations.">
-  <meta name="author" content="Mishkin Faustini">
+    content="A non-profit initiative building a democratically governed global currency with fiscal autonomy for sovereign nations. Join our mission for a more equitable monetary system.">
+  <meta name="author" content="Commons Currency Initiative">
+  <meta name="keywords"
+    content="global currency, democratic governance, fiscal autonomy, monetary system, non-profit, international finance, world currency, global economy, commons currency, bancor, keynes">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  <meta name="revisit-after" content="7 days">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link rel="canonical" href="https://commonscurrency.org/">
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="article">
+  <!-- Open Graph / Facebook / WhatsApp / Instagram -->
+  <meta property="og:type" content="website">
   <meta property="og:url" content="https://commonscurrency.org/">
-  <meta property="og:title" content="Commons: A Foundation for a Just Global Economy">
+  <meta property="og:title" content="Commons Currency Monetary System | A Global Monetary Initiative">
   <meta property="og:description"
-    content="A conceptual framework for a supranational world currency that is democratically administered and enables full fiscal autonomy for sovereign nations.">
-  <meta property="og:image" content="https://commonscurrency.org/images/commons-currency-social.jpg">
+    content="A non-profit initiative building a democratically governed global currency with fiscal autonomy for sovereign nations.">
+  <meta property="og:image" content="https://commonscurrency.org/favicon.png">
+  <meta property="og:site_name" content="Commons Currency">
+  <meta property="og:locale" content="en_US">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://commonscurrency.org/">
-  <meta property="twitter:title" content="Commons: A Foundation for a Just Global Economy">
+  <meta property="twitter:title" content="Commons Currency Monetary System | A Global Monetary Initiative">
   <meta property="twitter:description"
-    content="A conceptual framework for a supranational world currency that is democratically administered and enables full fiscal autonomy for sovereign nations.">
-  <meta property="twitter:image" content="https://commonscurrency.org/images/commons-currency-social.jpg">
+    content="A non-profit initiative building a democratically governed global currency with fiscal autonomy for sovereign nations.">
+  <meta property="twitter:image" content="https://commonscurrency.org/favicon.png">
+  <meta name="twitter:creator" content="@CommonsCurrency">
+
+  <!-- LinkedIn -->
+  <meta property="linkedin:card" content="summary_large_image">
+  <meta property="linkedin:title" content="Commons Currency Monetary System | A Global Monetary Initiative">
+  <meta property="linkedin:description"
+    content="A non-profit initiative building a democratically governed global currency with fiscal autonomy for sovereign nations.">
+  <meta property="linkedin:image" content="https://commonscurrency.org/favicon.png">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="https://commonscurrency.org/favicon.png">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <link rel="shortcut icon" href="favicon.png">
+
+  <!-- Mobile Specific -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Commons Currency">
+  <meta name="application-name" content="Commons Currency">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Structured Data / Schema.org -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Commons Currency",
+      "url": "https://commonscurrency.org",
+      "logo": "https://commonscurrency.org/favicon.png",
+      "description": "A non-profit initiative building a democratically governed global currency with fiscal autonomy for sovereign nations.",
+      "sameAs": [
+        "https://twitter.com/CommonsCurrency",
+        "https://linkedin.com/company/commons-currency",
+        "https://facebook.com/CommonsCurrency"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "join@commonscurrency.org",
+        "contactType": "customer support"
+      }
+    }
+  </script>
+
+  <!-- Structured Data for WebPage -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Commons Currency Monetary System",
+      "description": "A non-profit initiative building a democratically governed global currency with fiscal autonomy for sovereign nations.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Commons Currency"
+      },
+      "inLanguage": "en-US"
+    }
+  </script>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,6 +107,17 @@
       height: 500px;
       max-width: 100%;
       margin: 0 auto;
+      touch-action: none;
+      /* Prevents touch events from triggering default behavior */
+      pointer-events: none;
+      /* Disables pointer events on mobile */
+    }
+
+    /* Re-enable pointer events on desktop */
+    @media (min-width: 769px) {
+      #chartdiv {
+        pointer-events: auto;
+      }
     }
   </style>
 
@@ -170,8 +245,8 @@
 
     h2 {
       font-family: 'Courier New', sans-serif;
-      font-weight: normal;
-      font-size: 1.8rem;
+      font-weight: bold;
+      font-size: 1.3rem;
       color: #000;
       margin: 2rem 0 1rem;
       padding-bottom: 0.5rem;
@@ -250,10 +325,13 @@
         am5themes_Animated.new(root)
       ]);
 
+      // Detect if mobile device
+      var isMobile = window.innerWidth < 769;
+
       // Create the map chart
       var chart = root.container.children.push(am5map.MapChart.new(root, {
-        panX: "rotateX",
-        panY: "rotateY",
+        panX: isMobile ? "none" : "rotateX", // Disable pan on mobile
+        panY: isMobile ? "none" : "rotateY", // Disable pan on mobile
         projection: am5map.geoOrthographic(),
         paddingBottom: 20,
         paddingTop: 20,
@@ -269,7 +347,7 @@
       polygonSeries.mapPolygons.template.setAll({
         tooltipText: "{name}",
         toggleKey: "active",
-        interactive: true
+        interactive: !isMobile // Disable interaction on mobile
       });
 
       polygonSeries.mapPolygons.template.states.create("hover", {
@@ -302,6 +380,18 @@
 
       // Make stuff animate on load
       chart.appear(1000, 100);
+
+      // Handle window resize
+      window.addEventListener('resize', function () {
+        var isMobile = window.innerWidth < 769;
+
+        // Update chart configuration for mobile/desktop
+        chart.set("panX", isMobile ? "none" : "rotateX");
+        chart.set("panY", isMobile ? "none" : "rotateY");
+
+        // Update polygon interaction
+        polygonSeries.mapPolygons.template.set("interactive", !isMobile);
+      });
     }); // end am5.ready()
   </script>
 </head>
@@ -314,15 +404,29 @@
       <div class="multilingual" id="multilingual">
         <p class="active">A global monetary system for all nations</p>
         <p>Un sistema monetario global para todas las naciones (Spanish)</p>
-        <p>适用于所有国家的全球货币体系 (Chinese)</p>
-        <p>نظام نقدي عالمي لجميع الدول (Arabic)</p>
-        <p>Глобальная валютная система для всех стран (Russian)</p>
+        <p>适用于所有国家的全球货币体系 (Chinese/Mandarin)</p>
         <p>सभी देशों के लिए एक वैश्विक मौद्रिक प्रणाली (Hindi)</p>
-        <p>Un système monétaire mondial pour toutes les nations (French)</p>
-        <p>すべての国のためのグローバル通貨システム (Japanese)</p>
+        <p>نظام نقدي عالمي لجميع الدول (Arabic)</p>
         <p>Um sistema monetário global para todas as nações (Portuguese)</p>
+        <p>Глобальная валютная система для всех стран (Russian)</p>
+        <p>すべての国のためのグローバル通貨システム (Japanese)</p>
+        <p>Un système monétaire mondial pour toutes les nations (French)</p>
         <p>Sebuah sistem moneter global untuk semua negara (Indonesian)</p>
         <p>Một hệ thống tiền tệ toàn cầu cho tất cả các quốc gia (Vietnamese)</p>
+        <p>모든 국가를 위한 글로벌 통화 시스템 (Korean)</p>
+        <p>Ein globales Währungssystem für alle Nationen (German)</p>
+        <p>Küresel bir para sistemi tüm uluslar için (Turkish)</p>
+        <p>Un sistema monetario globale per tutte le nazioni (Italian)</p>
+        <p>Sistem monetar global pentru toate națiunile (Romanian)</p>
+        <p>Globalni monetarni sistem za sve nacije (Serbian/Croatian)</p>
+        <p>Globalny system walutowy dla wszystkich narodów (Polish)</p>
+        <p>ระบบการเงินระดับโลกสำหรับทุกประเทศ (Thai)</p>
+        <p>Система глобальної валюти для всіх націй (Ukrainian)</p>
+        <p>Globális pénzügyi rendszer minden nemzet számára (Hungarian)</p>
+        <p>גלאבאלע געלט סיסטעם פֿאַר אַלע נאַציאָנען (Yiddish)</p>
+        <p>Mfumo wa fedha wa kimataifa kwa mataifa yote (Swahili)</p>
+        <p>Sistemang pananalapi sa buong mundo para sa lahat ng bansa (Filipino)</p>
+        <p>Hệ thống tiền tệ toàn cầu cho tất cả các quốc gia (Vietnamese)</p>
       </div>
     </header>
 
