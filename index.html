@@ -100,6 +100,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
 
+  <!-- External Styles -->
+  <link rel="stylesheet" href="styles.css">
+
   <!-- Styles for Globe -->
   <style>
     #chartdiv {
@@ -118,75 +121,6 @@
       #chartdiv {
         pointer-events: auto;
       }
-    }
-  </style>
-
-  <!-- Resources for Globe -->
-  <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
-  <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
-  <script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
-  <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Courier New', sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background-color: white;
-      padding: 0;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .container {
-      width: 100%;
-      padding: 0 2rem;
-    }
-
-    header {
-      text-align: center;
-      padding: 6rem 0 3rem;
-    }
-
-    .title {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 3.5rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: transparent;
-      background: linear-gradient(45deg, #333, #000);
-      -webkit-background-clip: text;
-      background-clip: text;
-      margin-bottom: 1rem;
-      line-height: 1.2;
-      animation: gradientShift 8s ease infinite;
-      text-shadow: 0 0 1px rgba(0, 0, 0, 0.05);
-    }
-
-    .nonprofit-badge {
-      display: inline-block;
-      background-color: #f8f8f8;
-      border: 1px solid #e0e0e0;
-      border-radius: 20px;
-      padding: 6px 12px;
-      margin: 0 auto 15px;
-      font-size: 0.85rem;
-      font-family: 'Montserrat', sans-serif;
-      color: #555;
-      letter-spacing: 0.5px;
-    }
-
-    .nonprofit-badge::before {
-      content: "♢";
-      margin-right: 5px;
-      color: #777;
     }
 
     .multilingual {
@@ -221,33 +155,6 @@
       max-width: 680px;
     }
 
-    .intro-text {
-      text-align: center;
-      margin: 2rem auto 4rem;
-      max-width: 680px;
-      font-size: 1.1rem;
-      line-height: 1.8;
-    }
-
-    .intro-section {
-      text-align: center;
-      margin: 2rem auto 4rem;
-      max-width: 680px;
-    }
-
-    .intro-section h3 {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 1.8rem;
-      color: #222;
-      margin-bottom: 1.5rem;
-      letter-spacing: 0.02em;
-    }
-
-    .intro-section .intro-text {
-      margin: 1rem auto 1.5rem;
-    }
-
     @keyframes gradientShift {
       0% {
         background-position: 0% 50%;
@@ -262,62 +169,12 @@
       }
     }
 
-    h2 {
-      font-family: 'Courier New', sans-serif;
-      font-weight: bold;
-      font-size: 1.3rem;
-      color: #000;
-      margin: 2rem 0 1rem;
-      padding-bottom: 0.5rem;
-      text-transform: uppercase;
+    h1.title {
+      animation: gradientShift 8s ease infinite;
     }
 
-    p {
-      margin-bottom: 1.5rem;
-      font-size: 1rem;
-      line-height: 1.8;
-    }
-
-    .highlight {
-      display: inline;
-      background-color: #f8f8f8;
-      border-bottom: 1px solid #ccc;
-      font-weight: 500;
-    }
-
-    section {
-      padding: 1rem 0;
-      margin-bottom: 1rem;
-    }
-
-    ul {
-      list-style-type: none;
-      margin: 1rem 0;
-    }
-
-    li {
-      margin-bottom: 1rem;
-      line-height: 1.6;
-    }
-
-    /* Mobile optimizations */
+    /* Mobile optimizations for globe */
     @media (max-width: 768px) {
-      .container {
-        padding: 0 1.5rem;
-      }
-
-      header {
-        padding: 4rem 0 2rem;
-      }
-
-      .title {
-        font-size: 2.5rem;
-      }
-
-      h2 {
-        font-size: 1.5rem;
-      }
-
       #chartdiv {
         height: 350px;
       }
@@ -325,13 +182,14 @@
       .globe-section {
         margin-bottom: 2rem;
       }
-
-      .intro-text {
-        margin: 1rem auto 3rem;
-        font-size: 1rem;
-      }
     }
   </style>
+
+  <!-- Resources for Globe -->
+  <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
 
   <!-- Chart code for Globe -->
   <script>
@@ -416,6 +274,19 @@
 </head>
 
 <body>
+  <!-- Navigation -->
+  <nav>
+    <div class="container">
+      <a href="index.html" class="logo">Commons Currency</a>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="charter.html">The Charter</a></li>
+        <li><a href="proposals.html">Proposals</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </div>
+  </nav>
+
   <div class="container">
     <header>
       <h1 class="title">Commons Currency Monetary System</h1>
